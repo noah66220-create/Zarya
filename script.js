@@ -201,3 +201,101 @@ document.querySelectorAll(".stat h2").forEach(stat => {
     }
 
 });
+/* ==========================================================
+   RETOUR EN HAUT
+========================================================== */
+
+const topButton = document.createElement("button");
+
+topButton.innerHTML = "↑";
+
+topButton.className = "back-top";
+
+document.body.appendChild(topButton);
+
+topButton.style.position = "fixed";
+topButton.style.bottom = "30px";
+topButton.style.right = "30px";
+topButton.style.width = "55px";
+topButton.style.height = "55px";
+topButton.style.borderRadius = "50%";
+topButton.style.border = "none";
+topButton.style.background = "#6c5cff";
+topButton.style.color = "#fff";
+topButton.style.fontSize = "22px";
+topButton.style.cursor = "pointer";
+topButton.style.display = "none";
+topButton.style.zIndex = "9999";
+topButton.style.transition = ".3s";
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        topButton.style.display = "block";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+});
+
+topButton.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+/* ==========================================================
+   PARALLAX HERO
+========================================================== */
+
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+
+    const offset = window.pageYOffset;
+
+    if(hero){
+
+        hero.style.backgroundPositionY = offset * 0.4 + "px";
+
+    }
+
+});
+
+/* ==========================================================
+   ANIMATION DES BOUTONS
+========================================================== */
+
+document.querySelectorAll("button").forEach(button => {
+
+    button.addEventListener("mouseenter",()=>{
+
+        button.style.transform="scale(1.05)";
+
+    });
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.transform="scale(1)";
+
+    });
+
+});
+
+/* ==========================================================
+   CONSOLE
+========================================================== */
+
+console.log("%cBienvenue sur Zarya 🚀","color:#6c5cff;font-size:22px;font-weight:bold;");
+console.log("Site développé avec HTML, CSS et JavaScript.");
+console.log("Version : Alpha 0.1");
