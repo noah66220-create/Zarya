@@ -1,62 +1,203 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zarya</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================================
+   ZARYA
+   SCRIPT.JS
+   PARTIE 1
+========================================================== */
 
-<header>
-  <h1>Zarya</h1>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#jeux">Jeux</a>
-    <a href="#catalogue">Catalogue</a>
-    <a href="#communaute">Communauté</a>
-    <a href="#download">Télécharger</a>
-  </nav>
-</header>
+const navbar = document.querySelector(".navbar");
 
-<main>
-<section id="accueil">
-<h2>Bienvenue sur Zarya</h2>
-<p>Crée, joue et partage tes mondes.</p>
-<button id="download-btn">Télécharger le Launcher</button>
-<button id="games-btn">Explorer les jeux</button>
-</section>
+window.addEventListener("scroll", () => {
 
-<section id="jeux">
-<h2>Jeux populaires</h2>
-<div class="card"><h3>Build City</h3><p>Construis une ville.</p></div>
-<div class="card"><h3>Battle Arena</h3><p>Affronte les autres joueurs.</p></div>
-<div class="card"><h3>Speed Race</h3><p>Course multijoueur.</p></div>
-</section>
+    if (window.scrollY > 40) {
 
-<section id="catalogue">
-<h2>Catalogue</h2>
-<p>Solde : <strong><span id="zayux">100</span> Zayux</strong></p>
-</section>
+        navbar.style.background = "rgba(8,8,15,.95)";
+        navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
 
-<section id="communaute">
-<h2>Communauté</h2>
-<p>Discute, ajoute des amis et partage tes créations.</p>
-</section>
+    } else {
 
-<section id="download">
-<h2>Téléchargement</h2>
-<p>Installe Zarya Launcher.</p>
-<button onclick="location.href='download.html'">Télécharger</button>
-</section>
-</main>
+        navbar.style.background = "rgba(10,10,20,.65)";
+        navbar.style.boxShadow = "none";
 
-<footer>
-<p>© 2026 Zarya</p>
-<p>Heure : <span id="clock"></span></p>
-<button id="top">Retour en haut</button>
-</footer>
+    }
 
-<script src="script.js"></script>
-</body>
-</html>
+});
+
+/* ==========================================================
+   SCROLL FLUIDE
+========================================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+window.addEventListener("load",()=>{
+
+    const hero = document.querySelector(".hero-content");
+
+    hero.style.opacity = "0";
+
+    hero.style.transform = "translateY(60px)";
+
+    setTimeout(()=>{
+
+        hero.style.transition = ".8s";
+
+        hero.style.opacity = "1";
+
+        hero.style.transform = "translateY(0px)";
+
+    },200);
+
+});
+
+/* ==========================================================
+   BOUTONS
+========================================================== */
+
+const download = document.getElementById("download-btn");
+
+if(download){
+
+download.onclick=()=>{
+
+alert("Le Launcher sera bientôt disponible.");
+
+};
+
+}
+
+const games = document.getElementById("games-btn");
+
+if(games){
+
+games.onclick=()=>{
+
+document.querySelector("#games").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
+
+}
+/* ==========================================================
+   APPARITION AU DÉFILEMENT
+========================================================== */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    section.style.opacity = "0";
+    section.style.transform = "translateY(60px)";
+    section.style.transition = "0.8s";
+
+    observer.observe(section);
+
+});
+
+/* ==========================================================
+   ANIMATION DES CARTES
+========================================================== */
+
+document.querySelectorAll(".game-card").forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.background =
+            `radial-gradient(circle at ${x}px ${y}px,
+            rgba(108,92,255,.18),
+            #181824 70%)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.background = "#181824";
+
+    });
+
+});
+
+/* ==========================================================
+   COMPTEURS ANIMÉS
+========================================================== */
+
+function animateCounter(element, target) {
+
+    let current = 0;
+
+    const increment = target / 100;
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent = Math.floor(current);
+
+    }, 20);
+
+}
+
+document.querySelectorAll(".stat h2").forEach(stat => {
+
+    const value = parseInt(stat.textContent.replace(/\D/g, ""));
+
+    if (!isNaN(value)) {
+
+        animateCounter(stat, value);
+
+    }
+
+});
