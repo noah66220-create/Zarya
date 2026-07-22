@@ -1,62 +1,380 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zarya</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarya - Crée. Joue. Partage.</title>
+
+    <meta name="description" content="Zarya est une plateforme de création et de jeux nouvelle génération.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-  <h1>Zarya</h1>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#jeux">Jeux</a>
-    <a href="#catalogue">Catalogue</a>
-    <a href="#communaute">Communauté</a>
-    <a href="#download">Télécharger</a>
-  </nav>
+<header class="navbar">
+
+    <div class="logo">
+        <h1>ZARYA</h1>
+    </div>
+
+    <nav>
+
+        <a href="#home">Accueil</a>
+
+        <a href="#games">Jeux</a>
+
+        <a href="#discover">Découvrir</a>
+
+        <a href="#community">Communauté</a>
+
+        <a href="#launcher">Launcher</a>
+
+        <a href="#news">Actualités</a>
+
+    </nav>
+
+    <div class="buttons">
+
+        <button class="login">
+            Connexion
+        </button>
+
+        <button class="register">
+            Inscription
+        </button>
+
+    </div>
+
 </header>
 
-<main>
-<section id="accueil">
-<h2>Bienvenue sur Zarya</h2>
-<p>Crée, joue et partage tes mondes.</p>
-<button id="download-btn">Télécharger le Launcher</button>
-<button id="games-btn">Explorer les jeux</button>
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>
+            Crée des jeux.
+            <br>
+            Joue avec le monde.
+        </h2>
+
+        <p>
+
+            Bienvenue sur Zarya.
+
+            Une nouvelle plateforme où chacun peut créer,
+            partager et jouer gratuitement.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <button id="download-btn">
+
+                Télécharger le Launcher
+
+            </button>
+
+            <button id="games-btn">
+
+                Explorer les jeux
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+  <!-- =========================
+     JEUX POPULAIRES
+========================= -->
+
+<section class="games-section" id="games">
+
+    <div class="section-title">
+        <h2>Jeux populaires</h2>
+        <p>Découvre les expériences les plus jouées sur Zarya.</p>
+    </div>
+
+    <div class="games-grid">
+
+        <article class="game-card">
+            <div class="game-image"></div>
+            <div class="game-content">
+                <h3>Build World</h3>
+                <p>Construis ton propre univers sans limite.</p>
+
+                <div class="game-info">
+                    <span>👥 12 548 joueurs</span>
+                    <span>⭐ 96%</span>
+                </div>
+
+                <button>Jouer</button>
+            </div>
+        </article>
+
+        <article class="game-card">
+            <div class="game-image"></div>
+            <div class="game-content">
+                <h3>Battle Arena</h3>
+                <p>Affronte les meilleurs joueurs.</p>
+
+                <div class="game-info">
+                    <span>👥 8 420 joueurs</span>
+                    <span>⭐ 95%</span>
+                </div>
+
+                <button>Jouer</button>
+            </div>
+        </article>
+
+        <article class="game-card">
+            <div class="game-image"></div>
+            <div class="game-content">
+                <h3>Speed Racing</h3>
+                <p>Des courses rapides en multijoueur.</p>
+
+                <div class="game-info">
+                    <span>👥 6 110 joueurs</span>
+                    <span>⭐ 94%</span>
+                </div>
+
+                <button>Jouer</button>
+            </div>
+        </article>
+
+    </div>
+
 </section>
 
-<section id="jeux">
-<h2>Jeux populaires</h2>
-<div class="card"><h3>Build City</h3><p>Construis une ville.</p></div>
-<div class="card"><h3>Battle Arena</h3><p>Affronte les autres joueurs.</p></div>
-<div class="card"><h3>Speed Race</h3><p>Course multijoueur.</p></div>
+<!-- =========================
+     STATISTIQUES
+========================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <h2>1M+</h2>
+        <p>Joueurs</p>
+    </div>
+
+    <div class="stat">
+        <h2>10K+</h2>
+        <p>Jeux créés</p>
+    </div>
+
+    <div class="stat">
+        <h2>250K+</h2>
+        <p>Téléchargements</p>
+    </div>
+
+    <div class="stat">
+        <h2>99.9%</h2>
+        <p>Disponibilité</p>
+    </div>
+
 </section>
 
-<section id="catalogue">
-<h2>Catalogue</h2>
-<p>Solde : <strong><span id="zayux">100</span> Zayux</strong></p>
+<!-- =========================
+     POURQUOI ZARYA ?
+========================= -->
+
+<section class="discover" id="discover">
+
+    <div class="section-title">
+        <h2>Pourquoi choisir Zarya ?</h2>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>🎮 Crée</h3>
+            <p>Développe tes propres jeux facilement.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🌍 Partage</h3>
+            <p>Publie tes créations auprès de toute la communauté.</p>
+        </div>
+
+        <div class="feature">
+            <h3>⚡ Rapide</h3>
+            <p>Launcher optimisé et mises à jour automatiques.</p>
+        </div>
+
+        <div class="feature">
+            <h3>👥 Social</h3>
+            <p>Ajoute des amis, rejoins des groupes et discute.</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     ACTUALITÉS
+========================= -->
+
+<section class="news" id="news">
+
+    <div class="section-title">
+        <h2>Dernières actualités</h2>
+        <p>Reste informé des nouveautés de Zarya.</p>
+    </div>
+
+    <div class="news-grid">
+
+        <article class="news-card">
+            <h3>🚀 Ouverture de Zarya</h3>
+            <p>Bienvenue sur la première version publique de Zarya.</p>
+        </article>
+
+        <article class="news-card">
+            <h3>🛠️ Nouveau Launcher</h3>
+            <p>Le launcher devient plus rapide et plus léger.</p>
+        </article>
+
+        <article class="news-card">
+            <h3>🎮 Nouveaux jeux</h3>
+            <p>De nouvelles expériences arrivent chaque semaine.</p>
+        </article>
+
+    </div>
+
 </section>
 
-<section id="communaute">
-<h2>Communauté</h2>
-<p>Discute, ajoute des amis et partage tes créations.</p>
+<!-- =========================
+     LAUNCHER
+========================= -->
+
+<section class="launcher" id="launcher">
+
+    <div class="launcher-content">
+
+        <div class="launcher-text">
+
+            <h2>Télécharge le Launcher</h2>
+
+            <p>
+                Lance Zarya en quelques secondes, profite des mises à jour
+                automatiques et accède à toute la plateforme.
+            </p>
+
+            <button class="download-launcher">
+                Télécharger gratuitement
+            </button>
+
+        </div>
+
+        <div class="launcher-image">
+            <div class="mockup"></div>
+        </div>
+
+    </div>
+
 </section>
 
-<section id="download">
-<h2>Téléchargement</h2>
-<p>Installe Zarya Launcher.</p>
-<button onclick="location.href='download.html'">Télécharger</button>
-</section>
-</main>
+<!-- =========================
+     COMMUNAUTÉ
+========================= -->
 
-<footer>
-<p>© 2026 Zarya</p>
-<p>Heure : <span id="clock"></span></p>
-<button id="top">Retour en haut</button>
+<section class="community" id="community">
+
+    <div class="section-title">
+
+        <h2>Rejoins la communauté</h2>
+
+        <p>
+            Crée des jeux, rencontre d'autres créateurs et partage tes projets.
+        </p>
+
+    </div>
+
+    <div class="community-grid">
+
+        <div class="community-card">
+            <h3>👥 Amis</h3>
+            <p>Ajoute des joueurs et crée ton réseau.</p>
+        </div>
+
+        <div class="community-card">
+            <h3>💬 Discussions</h3>
+            <p>Échange avec la communauté Zarya.</p>
+        </div>
+
+        <div class="community-card">
+            <h3>🏆 Créateurs</h3>
+            <p>Découvre les meilleurs développeurs de la plateforme.</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>Zarya</h3>
+            <p>
+                Une plateforme où chacun peut créer,
+                partager et jouer.
+            </p>
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Navigation</h3>
+
+            <a href="#home">Accueil</a>
+            <a href="#games">Jeux</a>
+            <a href="#discover">Découvrir</a>
+            <a href="#launcher">Launcher</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Communauté</h3>
+
+            <a href="#">Discord</a>
+            <a href="#">YouTube</a>
+            <a href="#">GitHub</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Légal</h3>
+
+            <a href="#">Conditions d'utilisation</a>
+            <a href="#">Politique de confidentialité</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Zarya. Tous droits réservés.
+        </p>
+
+    </div>
+
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
